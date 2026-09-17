@@ -13,7 +13,7 @@ const ModalEarnper = ({ setplusTab, setEarnperModal, count, setCount }) => {
     if (count > lvl1Price) {
       setplusTab((e) => e + 2);
       setCount(count - lvl1Price);
-      setlvl1Price(lvl1Price * 1.5);
+      setlvl1Price(Math.ceil(lvl1Price * 1.5));
     } else {
       alert("Hisobingizda mablag' yetarli emas");
     }
@@ -22,7 +22,7 @@ const ModalEarnper = ({ setplusTab, setEarnperModal, count, setCount }) => {
     if (count > lvl2Price) {
       setplusTab((e) => e + 3);
       setCount(count - lvl2Price);
-      setlvl2Price(lvl2Price * 1.5);
+      setlvl2Price(Math.ceil(lvl2Price * 1.5));
     } else {
       alert("Hisobingizda mablag' yetarli emas");
     }
@@ -31,14 +31,14 @@ const ModalEarnper = ({ setplusTab, setEarnperModal, count, setCount }) => {
     if (count > lvl3Price) {
       setplusTab((e) => e + 4);
       setCount(count - lvl3Price);
-      setlvl3Price(lvl3Price * 1.5);
+      setlvl3Price(Math.ceil(lvl3Price * 1.5));
     } else {
       alert("Hisobingizda mablag' yetarli emas");
     }
   }
 
   return (
-    <div className="w-[240px] border-1 border-[#8575756E] shadow-md rounded-[20px] px-[30px] py-[25px] ">
+    <div className="min-w-[240px] border-1 border-[#8575756E] shadow-md rounded-[20px] px-[30px] py-[25px] ">
       <div className=" flex justify-end">
         <X onClick={() => setEarnperModal(false)} />
       </div>

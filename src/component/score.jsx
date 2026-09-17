@@ -1,4 +1,5 @@
 import ModalEarnper from "./modal-earnper";
+import ModalEarnperHours from "./modal-earnperHours";
 
 const stats = [
   { label: "Earn per tap", value: "+12", tint: "bg-[#f3c766]" },
@@ -12,18 +13,23 @@ const Score = ({
   setEarnperModal,
   earnperModal,
   setplusTab,
+  plusTab,
+  modalEarnperHours,
+  setModalEarnperHours,
 }) => {
   return (
     <section>
       <div className="grid grid-cols-3 gap-2">
         <div
-          onClick={() => setEarnperModal(!earnperModal)}
+          onClick={() => {
+            (setEarnperModal(!earnperModal), setModalEarnperHours(false));
+          }}
           className="flex items-center justify-center gap-2 rounded-2xl bg-[#1d2026] px-2 py-3 text-center text-[10px] text-white/80"
         >
           <div>
             <div className="text-[10px] text-white/70">Earn per tap</div>
             <div className="mt-0.5 text-[11px] font-bold text-white">
-              +{count}
+              +{plusTab}
             </div>
           </div>
         </div>
@@ -33,7 +39,12 @@ const Score = ({
             <div className="mt-0.5 text-[11px] font-bold text-white">+12</div>
           </div>
         </div>
-        <div className="flex items-center justify-center gap-2 rounded-2xl bg-[#1d2026] px-2 py-3 text-center text-[10px] text-white/80">
+        <div
+          onClick={() => {
+            (setModalEarnperHours(!modalEarnperHours), setEarnperModal(false));
+          }}
+          className="flex items-center justify-center gap-2 rounded-2xl bg-[#1d2026] px-2 py-3 text-center text-[10px] text-white/80"
+        >
           <div>
             <div className="text-[10px] text-white/70">Profit per hour</div>
             <div className="mt-0.5 text-[11px] font-bold text-white">+12</div>
@@ -47,6 +58,18 @@ const Score = ({
             setEarnperModal={setEarnperModal}
             count={count}
             setCount={setCount}
+            setModalEarnperHours={setModalEarnperHours}
+          />
+        )}
+      </div>
+      <div className="ModalEarnperHours">
+        {modalEarnperHours && (
+          <ModalEarnperHours
+            count={count}
+            setCount={setCount}
+            modalEarnperHours={modalEarnperHours}
+            setModalEarnperHours={setModalEarnperHours}
+            setEarnperModal={setEarnperModal}
           />
         )}
       </div>

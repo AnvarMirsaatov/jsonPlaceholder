@@ -15,3 +15,15 @@ body {
 button {
   cursor: pointer;
 }
+
+#ModalEarnperHours {
+  z-index: 10;
+}
+
+#main {
+  z-index: 1;
+}
+
+.ModalEarnperHours {
+  position: absolute;
+}
