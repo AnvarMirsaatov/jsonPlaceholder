@@ -1,29 +1,6 @@
 @import "tailwindcss";
-@plugin "daisyui";
+@plugin "daisyui"
 
 body {
-  margin: 0;
-  min-height: 100vh;
-  font-family: Inter, "Segoe UI", sans-serif;
-  background: #171a1f;
-}
-
-* {
-  box-sizing: border-box;
-}
-
-button {
-  cursor: pointer;
-}
-
-#ModalEarnperHours {
-  z-index: 10;
-}
-
-#main {
-  z-index: 1;
-}
-
-.ModalEarnperHours {
-  position: absolute;
+  background: white;
 }
